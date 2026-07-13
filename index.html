@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>♡ Swarnali Chatterjee — Game Programmer ♡</title>
+<title>♡ Swarnali Chatterjee — Game Programmer & Systems Designer ♡</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,325 +38,128 @@
     overflow-x: hidden;
   }
 
-  /* sparkle layer */
-  .sparkle-field {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 5;
-    overflow: hidden;
-  }
-  .spark {
-    position: absolute;
-    font-size: 1.1rem;
-    opacity: 0.55;
-    animation: twinkle 3s ease-in-out infinite;
-  }
+  .sparkle-field { position: fixed; inset: 0; pointer-events: none; z-index: 5; overflow: hidden; }
+  .spark { position: absolute; font-size: 1.1rem; opacity: 0.55; animation: twinkle 3s ease-in-out infinite; }
   @keyframes twinkle { 0%,100% { opacity: 0.2; transform: scale(0.8) rotate(0deg);} 50% { opacity: 0.8; transform: scale(1.15) rotate(20deg);} }
 
-  /* ── GLOSSY BUBBLE BUTTONS ── */
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.7rem 1.5rem;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.82rem;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    border-radius: 999px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    border: none;
-    cursor: pointer;
-    position: relative;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.7rem 1.5rem; font-family: var(--font-display); font-weight: 700; font-size: 0.82rem;
+    letter-spacing: 0.01em; text-decoration: none; border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease; border: none; cursor: pointer; position: relative;
   }
   .btn:hover { transform: translateY(-3px) scale(1.03) rotate(-1deg); }
   .btn:active { transform: translateY(0) scale(0.97); }
-
   .btn-primary {
     background: linear-gradient(180deg, #ffb3d9 0%, var(--hotpink) 55%, var(--hotpink-d) 100%);
     color: #fff;
-    box-shadow:
-      inset 0 3px 4px rgba(255,255,255,0.85),
-      inset 0 -7px 10px rgba(180,0,90,0.25),
-      0 5px 16px rgba(232,56,138,0.4);
+    box-shadow: inset 0 3px 4px rgba(255,255,255,0.85), inset 0 -7px 10px rgba(180,0,90,0.25), 0 5px 16px rgba(232,56,138,0.4);
     text-shadow: 0 1px 2px rgba(150,0,70,0.3);
   }
   .btn-chrome {
     background: linear-gradient(180deg, #ffffff 0%, #f3ecff 45%, #d9c8ff 100%);
     color: var(--lilac-d);
-    box-shadow:
-      inset 0 3px 4px rgba(255,255,255,1),
-      inset 0 -6px 9px rgba(138,92,240,0.2),
-      0 4px 12px rgba(138,92,240,0.25);
+    box-shadow: inset 0 3px 4px rgba(255,255,255,1), inset 0 -6px 9px rgba(138,92,240,0.2), 0 4px 12px rgba(138,92,240,0.25);
   }
 
-  /* ── NAV ── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(255,250,253,0.78);
-    backdrop-filter: blur(16px);
-    border-bottom: 3px solid var(--white);
-    box-shadow: 0 2px 18px rgba(255,95,162,0.18);
-    z-index: 900;
-    padding: 0 clamp(1.5rem, 5vw, 4rem);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
+    position: fixed; top: 0; left: 0; right: 0;
+    background: rgba(255,250,253,0.78); backdrop-filter: blur(16px);
+    border-bottom: 3px solid var(--white); box-shadow: 0 2px 18px rgba(255,95,162,0.18);
+    z-index: 900; padding: 0 clamp(1.5rem, 5vw, 4rem);
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
   }
   .nav-logo {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.2rem;
+    font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;
     background: linear-gradient(180deg, var(--hotpink) 0%, var(--hotpink-d) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-stroke: 0.6px var(--hotpink-d);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-text-stroke: 0.6px var(--hotpink-d); display: flex; align-items: center; gap: 0.4rem;
   }
-  .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-  .nav-links a {
-    font-family: var(--font-display);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--lilac-d);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+  .nav-links a { font-family: var(--font-display); font-size: 0.76rem; font-weight: 700; color: var(--lilac-d); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--hotpink-d); }
 
   section { padding: clamp(4rem, 8vw, 6.5rem) clamp(1.5rem, 8vw, 5rem); position: relative; z-index: 2; }
   .max { max-width: 1100px; margin: 0 auto; }
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 64px;
-    overflow: hidden;
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 3rem;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-  }
+  #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 64px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; position: relative; z-index: 2; }
 
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(50px);
-    opacity: 0.55;
-    z-index: 0;
-  }
+  .blob { position: absolute; border-radius: 50%; filter: blur(50px); opacity: 0.55; z-index: 0; }
   .blob-1 { width: 380px; height: 380px; background: var(--hotpink); top: -100px; right: 0; opacity: 0.3; }
   .blob-2 { width: 300px; height: 300px; background: var(--skyblue); bottom: -60px; left: 0; opacity: 0.3; }
   .blob-3 { width: 220px; height: 220px; background: var(--yellow); top: 30%; right: 25%; opacity: 0.25; }
 
   .hero-eyebrow {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.78rem;
-    color: var(--hotpink-d);
-    margin-bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--white);
-    padding: 0.45rem 1rem;
-    border-radius: 999px;
-    box-shadow: 0 4px 14px rgba(255,95,162,0.25), inset 0 2px 2px #fff;
-    border: 2px solid #fff;
+    font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; color: var(--hotpink-d);
+    margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white);
+    padding: 0.45rem 1rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(255,95,162,0.25), inset 0 2px 2px #fff; border: 2px solid #fff;
   }
   h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.8rem, 5.5vw, 4.8rem);
-    font-weight: 800;
-    line-height: 0.98;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.3rem;
-    color: var(--white);
-    -webkit-text-stroke: 2px var(--grape);
-    text-shadow:
-      3px 3px 0 var(--lilac),
-      6px 6px 18px rgba(138,92,240,0.35);
+    font-family: var(--font-display); font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 800; line-height: 0.98;
+    letter-spacing: -0.01em; margin-bottom: 0.9rem; color: var(--white); -webkit-text-stroke: 2px var(--grape);
+    text-shadow: 3px 3px 0 var(--lilac), 6px 6px 18px rgba(138,92,240,0.35);
   }
-  h1 .pop {
-    color: var(--white);
-    -webkit-text-stroke: 2px var(--hotpink-d);
-    text-shadow:
-      3px 3px 0 var(--hotpink),
-      6px 6px 18px rgba(232,56,138,0.4);
+  h1 .pop { color: var(--white); -webkit-text-stroke: 2px var(--hotpink-d); text-shadow: 3px 3px 0 var(--hotpink), 6px 6px 18px rgba(232,56,138,0.4); }
+  .hero-subtitle {
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: var(--lilac-d);
+    margin-bottom: 1.1rem; letter-spacing: 0.01em;
   }
-  .hero-bio {
-    color: var(--subdued);
-    font-size: 0.95rem;
-    font-weight: 600;
-    max-width: 420px;
-    margin-bottom: 2rem;
-    line-height: 1.85;
-  }
+  .hero-bio { color: var(--subdued); font-size: 0.95rem; font-weight: 600; max-width: 440px; margin-bottom: 2rem; line-height: 1.85; }
   .hero-bio strong { color: var(--hotpink-d); }
   .hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
 
-  /* ── DIGICAM CARD (hero) ── */
   .digicam {
-    position: relative;
-    background: linear-gradient(160deg, #ffffff 0%, #ffe9f5 100%);
-    border-radius: 28px;
-    padding: 1.4rem;
-    box-shadow:
-      0 0 0 4px #fff,
-      0 0 0 7px var(--hotpink),
-      0 18px 40px rgba(232,56,138,0.3);
+    position: relative; background: linear-gradient(160deg, #ffffff 0%, #ffe9f5 100%); border-radius: 28px;
+    padding: 1.4rem; box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--hotpink), 0 18px 40px rgba(232,56,138,0.3);
     transform: rotate(2deg);
   }
-  .digicam::before {
-    content: '✿';
-    position: absolute;
-    top: -20px;
-    left: -16px;
-    font-size: 2.6rem;
-    color: var(--yellow);
-    -webkit-text-stroke: 2px var(--hotpink-d);
-    transform: rotate(-15deg);
-  }
-  .digicam-screen {
-    background: linear-gradient(135deg, var(--grape) 0%, #3a1850 100%);
-    border-radius: 18px;
-    padding: 1.3rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .digicam-screen::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.025) 2px, rgba(255,255,255,0.025) 3px);
-    pointer-events: none;
-  }
-  .digicam-topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--yellow);
-    font-family: var(--font-display);
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 1rem;
-  }
-  .rec-dot {
-    width: 8px; height: 8px; background: #ff3366; border-radius: 50%;
-    display: inline-block; margin-right: 0.4rem;
-    box-shadow: 0 0 8px #ff3366;
-    animation: blink 1.2s step-start infinite;
-  }
+  .digicam::before { content: '✿'; position: absolute; top: -20px; left: -16px; font-size: 2.6rem; color: var(--yellow); -webkit-text-stroke: 2px var(--hotpink-d); transform: rotate(-15deg); }
+  .digicam-screen { background: linear-gradient(135deg, var(--grape) 0%, #3a1850 100%); border-radius: 18px; padding: 1.3rem; position: relative; overflow: hidden; }
+  .digicam-screen::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.025) 2px, rgba(255,255,255,0.025) 3px); pointer-events: none; }
+  .digicam-topbar { display: flex; justify-content: space-between; align-items: center; color: var(--yellow); font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.08em; margin-bottom: 1rem; }
+  .rec-dot { width: 8px; height: 8px; background: #ff3366; border-radius: 50%; display: inline-block; margin-right: 0.4rem; box-shadow: 0 0 8px #ff3366; animation: blink 1.2s step-start infinite; }
   @keyframes blink { 50% { opacity: 0.2; } }
-
-  .stat-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.18);
-    font-size: 0.78rem;
-  }
+  .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px dashed rgba(255,255,255,0.18); font-size: 0.78rem; }
   .stat-row:last-child { border-bottom: none; }
   .stat-key { color: #c9a8e6; font-weight: 600; }
-  .stat-val {
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: var(--grape);
-    background: linear-gradient(180deg, #fff 0%, var(--yellow) 100%);
-    padding: 0.18rem 0.65rem;
-    border-radius: 8px;
-    font-size: 0.74rem;
-  }
-  .digicam-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-    font-family: var(--font-display);
-    font-size: 0.62rem;
-    color: #c9a8e6;
-    letter-spacing: 0.05em;
-  }
+  .stat-val { font-family: var(--font-display); font-weight: 700; color: var(--grape); background: linear-gradient(180deg, #fff 0%, var(--yellow) 100%); padding: 0.18rem 0.65rem; border-radius: 8px; font-size: 0.74rem; }
+  .digicam-footer { display: flex; justify-content: space-between; margin-top: 1rem; font-family: var(--font-display); font-size: 0.62rem; color: #c9a8e6; letter-spacing: 0.05em; }
 
-  /* ── divider hearts ── */
-  .divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.9rem;
-    margin: 0 0 3rem 0;
-  }
-  .divider .line {
-    flex: 1; max-width: 90px; height: 3px;
-    background: repeating-linear-gradient(90deg, var(--lilac) 0 8px, transparent 8px 14px);
-    border-radius: 3px;
-  }
+  .divider { display: flex; align-items: center; justify-content: center; gap: 0.9rem; margin: 0 0 3rem 0; }
+  .divider .line { flex: 1; max-width: 90px; height: 3px; background: repeating-linear-gradient(90deg, var(--lilac) 0 8px, transparent 8px 14px); border-radius: 3px; }
   .divider .heart { font-size: 1.3rem; color: var(--hotpink); filter: drop-shadow(0 2px 3px rgba(232,56,138,0.4)); }
 
-  .sec-label {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--hotpink-d);
-    margin-bottom: 0.4rem;
-    text-align: center;
-  }
-  h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--white);
-    -webkit-text-stroke: 1.5px var(--grape);
-    text-shadow: 3px 3px 0 var(--lilac);
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
+  .sec-label { font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hotpink-d); margin-bottom: 0.4rem; text-align: center; }
+  h2 { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.1; color: var(--white); -webkit-text-stroke: 1.5px var(--grape); text-shadow: 3px 3px 0 var(--lilac); text-align: center; margin-bottom: 0.5rem; }
+  .sec-intro { text-align: center; max-width: 620px; margin: 0 auto 2.5rem; color: var(--subdued); font-weight: 600; font-size: 0.92rem; }
 
   /* ── SKILLS ── */
   #skills { background: linear-gradient(160deg, var(--bg2) 0%, var(--bg3) 100%); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: 0.8rem;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 0.8rem; }
   .skill-tag {
-    background: linear-gradient(180deg, #ffffff 0%, #f6eaff 100%);
-    border-radius: 14px;
-    padding: 0.7rem 1rem;
-    font-family: var(--font-display);
-    font-size: 0.76rem;
-    font-weight: 700;
-    color: var(--lilac-d);
-    text-align: center;
-    box-shadow: 0 4px 0 var(--lilac), inset 0 2px 2px #fff;
-    transition: transform 0.15s;
+    background: linear-gradient(180deg, #ffffff 0%, #f6eaff 100%); border-radius: 14px; padding: 0.7rem 1rem;
+    font-family: var(--font-display); font-size: 0.76rem; font-weight: 700; color: var(--lilac-d); text-align: center;
+    box-shadow: 0 4px 0 var(--lilac), inset 0 2px 2px #fff; transition: transform 0.15s;
   }
   .skill-tag:hover { transform: translateY(-4px) rotate(-1deg); color: var(--hotpink-d); box-shadow: 0 4px 0 var(--hotpink); }
 
-  /* ── PROJECTS — POLAROID / DIGICAM VIDEO STYLE ── */
+  /* ── DESIGN PHILOSOPHY (new) ── */
+  #philosophy { background: linear-gradient(160deg, var(--bg3) 0%, var(--bg) 100%); }
+  .phil-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+  .phil-card {
+    background: var(--white); border-radius: 22px; padding: 1.8rem;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--bg2), 0 12px 26px rgba(138,92,240,0.2);
+  }
+  .phil-num { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--hotpink); margin-bottom: 0.5rem; display: block; }
+  .phil-title { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--grape); margin-bottom: 0.6rem; }
+  .phil-body { font-size: 0.84rem; color: var(--subdued); font-weight: 600; line-height: 1.75; }
+  .phil-body strong { color: var(--lilac-d); }
+
+  /* ── PROJECTS ── */
   .projects-grid { display: grid; gap: 2rem; }
   .project-card {
-    background: var(--white);
-    border-radius: 26px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    background: var(--white); border-radius: 26px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr;
     box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--bg2), 0 16px 36px rgba(138,92,240,0.22);
     transition: transform 0.2s, box-shadow 0.2s;
   }
@@ -364,155 +167,73 @@
   .project-card.full { grid-template-columns: 1fr; }
   .project-info { padding: 2rem; display: flex; flex-direction: column; gap: 1rem; }
   .project-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-  .tag {
-    font-family: var(--font-display);
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 0.28rem 0.75rem;
-    border-radius: 999px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #fff;
-  }
+  .tag { font-family: var(--font-display); font-size: 0.65rem; font-weight: 700; padding: 0.28rem 0.75rem; border-radius: 999px; letter-spacing: 0.03em; text-transform: uppercase; color: #fff; }
   .tag-engine { background: linear-gradient(180deg, #80d9ff, var(--skyblue)); }
   .tag-type   { background: linear-gradient(180deg, #c9a8ff, var(--lilac)); }
   .tag-intern { background: linear-gradient(180deg, #ff9ec9, var(--hotpink)); }
 
   h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: var(--hotpink-d); }
-  .project-desc { color: var(--subdued); font-size: 0.85rem; font-weight: 500; line-height: 1.75; flex: 1; }
+  .project-desc { color: var(--subdued); font-size: 0.85rem; font-weight: 500; line-height: 1.75; }
   .project-features { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
   .project-features li { font-size: 0.78rem; color: var(--lilac-d); font-weight: 600; display: flex; gap: 0.6rem; }
   .project-features li::before { content: '♡'; color: var(--hotpink); flex-shrink: 0; }
 
-  /* digicam viewfinder video frame */
+  /* ── DESIGN NOTES (new — this is the design-process signal) ── */
+  .design-notes {
+    background: linear-gradient(160deg, #fff8fc 0%, #f6effe 100%);
+    border: 2px dashed var(--lilac);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    margin-top: 0.3rem;
+  }
+  .dn-label {
+    font-family: var(--font-display); font-weight: 800; font-size: 0.66rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--hotpink-d); margin-bottom: 0.55rem; display: flex; align-items: center; gap: 0.4rem;
+  }
+  .dn-row { display: grid; grid-template-columns: 78px 1fr; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .dn-row:last-child { margin-bottom: 0; }
+  .dn-key { font-family: var(--font-display); font-weight: 700; font-size: 0.68rem; color: var(--lilac-d); text-transform: uppercase; letter-spacing: 0.03em; padding-top: 0.1rem; }
+  .dn-val { font-size: 0.78rem; color: var(--grape); font-weight: 500; line-height: 1.6; }
+
   .project-media {
-    background: linear-gradient(160deg, var(--grape) 0%, #2c1240 100%);
-    position: relative;
-    overflow: hidden;
-    min-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.2rem;
+    background: linear-gradient(160deg, var(--grape) 0%, #2c1240 100%); position: relative; overflow: hidden;
+    min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 1.2rem;
   }
   .viewfinder {
-    width: 100%;
-    height: 100%;
-    border: 3px dashed rgba(255,240,102,0.6);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.7rem;
-    position: relative;
-    padding: 0.6rem;
+    width: 100%; height: 100%; border: 3px dashed rgba(255,240,102,0.6); border-radius: 16px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.7rem; position: relative; padding: 0.6rem;
   }
-  .viewfinder .corner {
-    position: absolute;
-    width: 18px; height: 18px;
-    border-color: var(--yellow);
-    border-style: solid;
-  }
+  .viewfinder .corner { position: absolute; width: 18px; height: 18px; border-color: var(--yellow); border-style: solid; }
   .corner.tl { top: 8px; left: 8px; border-width: 3px 0 0 3px; }
   .corner.tr { top: 8px; right: 8px; border-width: 3px 3px 0 0; }
   .corner.bl { bottom: 8px; left: 8px; border-width: 0 0 3px 3px; }
   .corner.br { bottom: 8px; right: 8px; border-width: 0 3px 3px 0; }
-
-  .vf-rec {
-    position: absolute; top: 14px; left: 14px;
-    display: flex; align-items: center; gap: 0.3rem;
-    font-family: var(--font-display); font-size: 0.6rem; color: var(--yellow); letter-spacing: 0.08em;
-  }
-  .vf-timestamp {
-    position: absolute; bottom: 14px; right: 14px;
-    font-family: var(--font-display); font-size: 0.6rem; color: var(--yellow); letter-spacing: 0.05em;
-    z-index: 3;
-  }
-  .vf-rec { z-index: 3; }
+  .vf-rec { position: absolute; top: 14px; left: 14px; display: flex; align-items: center; gap: 0.3rem; font-family: var(--font-display); font-size: 0.6rem; color: var(--yellow); letter-spacing: 0.08em; z-index: 3; }
+  .vf-timestamp { position: absolute; bottom: 14px; right: 14px; font-family: var(--font-display); font-size: 0.6rem; color: var(--yellow); letter-spacing: 0.05em; z-index: 3; }
   .corner { z-index: 3; }
-  .vf-frame {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-  }
-  .vf-frame iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-  }
-  .vf-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .play-icon {
-    width: 64px; height: 64px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #ffb3d9 0%, var(--hotpink) 100%);
-    border: 3px solid #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; color: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-  }
-  .media-title {
-    font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
-    letter-spacing: 0.03em; color: #fff; text-align: center;
-  }
-
+  .vf-frame { position: relative; width: 100%; height: 100%; border-radius: 12px; overflow: hidden; background: #000; }
+  .vf-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .chapter-links { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
   .chapter-link {
-    font-family: var(--font-display);
-    font-size: 0.7rem; font-weight: 700;
-    padding: 0.32rem 0.8rem;
-    background: linear-gradient(180deg, #fff 0%, #ffe1ee 100%);
-    border-radius: 999px;
-    color: var(--hotpink-d);
-    text-decoration: none;
-    box-shadow: 0 3px 0 var(--hotpink);
-    transition: all 0.15s;
+    font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; padding: 0.32rem 0.8rem;
+    background: linear-gradient(180deg, #fff 0%, #ffe1ee 100%); border-radius: 999px; color: var(--hotpink-d);
+    text-decoration: none; box-shadow: 0 3px 0 var(--hotpink); transition: all 0.15s;
   }
   .chapter-link:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--hotpink); }
 
   /* ── EXPERIENCE ── */
   #experience { background: linear-gradient(160deg, var(--bg3) 0%, var(--bg) 100%); }
-  .exp-block {
-    background: var(--white);
-    border-radius: 26px;
-    padding: 2.2rem;
-    box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--lilac), 0 16px 32px rgba(138,92,240,0.25);
-    max-width: 760px;
-    margin: 0 auto;
-  }
+  .exp-block { background: var(--white); border-radius: 26px; padding: 2.2rem; box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--lilac), 0 16px 32px rgba(138,92,240,0.25); max-width: 760px; margin: 0 auto; }
   .exp-role { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--hotpink-d); margin-bottom: 0.2rem; }
   .exp-company { font-size: 0.85rem; color: var(--lilac-d); font-weight: 700; margin-bottom: 0.5rem; }
-  .exp-period {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-size: 0.7rem; font-weight: 700;
-    color: var(--grape);
-    background: linear-gradient(180deg, #fff, var(--yellow));
-    padding: 0.25rem 0.8rem;
-    border-radius: 999px;
-    margin-bottom: 1.3rem;
-  }
+  .exp-period { display: inline-block; font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; color: var(--grape); background: linear-gradient(180deg, #fff, var(--yellow)); padding: 0.25rem 0.8rem; border-radius: 999px; margin-bottom: 1.3rem; }
   .exp-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
   .exp-list li { font-size: 0.85rem; color: var(--subdued); font-weight: 600; display: flex; gap: 0.7rem; }
   .exp-list li::before { content: '✦'; color: var(--hotpink); flex-shrink: 0; }
 
   /* ── EDUCATION ── */
   .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.3rem; }
-  .edu-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 1.7rem;
-    box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--bg2), 0 10px 24px rgba(138,92,240,0.18);
-  }
+  .edu-card { background: var(--white); border-radius: 20px; padding: 1.7rem; box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--bg2), 0 10px 24px rgba(138,92,240,0.18); }
   .edu-inst { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: var(--skyblue); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.4rem; }
   .edu-degree { font-family: var(--font-display); font-weight: 700; margin-bottom: 0.4rem; font-size: 1.05rem; color: var(--hotpink-d); }
   .edu-detail { font-size: 0.78rem; color: var(--subdued); font-weight: 600; }
@@ -522,28 +243,11 @@
   #contact .sub { color: var(--subdued); font-size: 0.9rem; font-weight: 600; margin: 0 auto 2.5rem; max-width: 430px; }
   .contact-links { display: flex; justify-content: center; gap: 0.9rem; flex-wrap: wrap; }
 
-  /* ── FOOTER ── */
   footer {
-    background: var(--grape);
-    padding: 1.6rem clamp(1.5rem, 5vw, 4rem);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--font-display);
-    font-size: 0.72rem;
-    color: var(--yellow);
-    font-weight: 600;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    background: var(--grape); padding: 1.6rem clamp(1.5rem, 5vw, 4rem); display: flex; justify-content: space-between;
+    align-items: center; font-family: var(--font-display); font-size: 0.72rem; color: var(--yellow); font-weight: 600; flex-wrap: wrap; gap: 0.5rem;
   }
-  .status-dot {
-    display: inline-block;
-    width: 8px; height: 8px;
-    background: #6dffb0;
-    border-radius: 50%;
-    margin-right: 0.4rem;
-    box-shadow: 0 0 10px #6dffb0;
-  }
+  .status-dot { display: inline-block; width: 8px; height: 8px; background: #6dffb0; border-radius: 50%; margin-right: 0.4rem; box-shadow: 0 0 10px #6dffb0; }
 
   @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; }
@@ -553,6 +257,7 @@
     .project-media { min-height: 220px; }
     .nav-links { display: none; }
     .blob { display: none; }
+    .dn-row { grid-template-columns: 1fr; gap: 0.15rem; }
   }
 </style>
 </head>
@@ -568,10 +273,10 @@
   <span class="spark" style="top:90%; left:60%; animation-delay:1.8s;">✦</span>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">✿ swarnali.exe</div>
   <ul class="nav-links">
+    <li><a href="#philosophy">Process</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -588,27 +293,59 @@
     <div class="hero-content">
       <div class="hero-eyebrow">✧ available for opportunities ✧</div>
       <h1>Swarnali<br>Chatte<span class="pop">rjee</span></h1>
+      <div class="hero-subtitle">game programmer ✦ systems &amp; interaction designer</div>
       <p class="hero-bio">
-        Game programmer making <strong>Unity & C#</strong> magic ✦ combat mechanics, local multiplayer, WebGL delivery sims, and story-driven quiz games. B.Tech CS @ KIIT-DU.
+        I build the <strong>Unity &amp; C#</strong> systems that make a game feel right — combat states, difficulty curves, local multiplayer, WebGL delivery sims. Every mechanic here started as a design problem before it became a script. B.Tech CS @ KIIT-DU.
       </p>
       <div class="hero-links">
         <a class="btn btn-primary" href="#projects">view projects ♡</a>
+        <a class="btn btn-chrome" href="#philosophy">how i design</a>
         <a class="btn btn-chrome" href="https://github.com/Swarrrrovski" target="_blank">github ↗</a>
         <a class="btn btn-chrome" href="https://www.linkedin.com/in/swarnali-chatterjee-052092225/" target="_blank">linkedin ↗</a>
-        <a class="btn btn-chrome" href="https://drive.google.com/file/d/1kDzxpqsQeYxchqxwafzG92yr-NZlNzqp/view" target="_blank">resume ↗</a>
       </div>
     </div>
 
     <div class="digicam">
       <div class="digicam-screen">
         <div class="digicam-topbar"><span><span class="rec-dot"></span>REC</span><span>♥ 100%</span></div>
-        <div class="stat-row"><span class="stat-key">role</span><span class="stat-val">game programmer</span></div>
+        <div class="stat-row"><span class="stat-key">role</span><span class="stat-val">programmer + designer</span></div>
         <div class="stat-row"><span class="stat-key">engine</span><span class="stat-val">unity</span></div>
         <div class="stat-row"><span class="stat-key">language</span><span class="stat-val">c#</span></div>
         <div class="stat-row"><span class="stat-key">cgpa</span><span class="stat-val">8.43 / 10</span></div>
-        <div class="stat-row"><span class="stat-key">projects</span><span class="stat-val">4 shipped</span></div>
+        <div class="stat-row"><span class="stat-key">projects</span><span class="stat-val">4 shipped, 4 iterated</span></div>
         <div class="stat-row"><span class="stat-key">open to</span><span class="stat-val">relocation</span></div>
         <div class="digicam-footer"><span>00:00:42</span><span>♡ kiit-du.exe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN PHILOSOPHY (new) -->
+<section id="philosophy">
+  <div class="max">
+    <div class="sec-label">✧ the process ✧</div>
+    <h2>How I Design</h2>
+    <p class="sec-intro">I come at design from the code side — every project below started as a question about how it should feel to play, and the engineering followed from that. Here's the thinking behind the four projects in the gallery.</p>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <span class="phil-num">01</span>
+        <div class="phil-title">The state machine is the design document</div>
+        <div class="phil-body">Before writing gameplay code, I map out states and transitions on paper first — <strong>hurt, block, attack, death</strong> aren't just code states, they're the vocabulary of what a player can feel in a given moment. If a state doesn't change what the player can do or feel, it doesn't belong in the machine.</div>
+      </div>
+      <div class="phil-card">
+        <span class="phil-num">02</span>
+        <div class="phil-title">Tune with data, then playtest the tuning</div>
+        <div class="phil-body">In the endless runner, I didn't guess at difficulty — I logged player performance (survival time, near-misses, death position) and manually adjusted obstacle spacing and enemy speed against that data. It's rule-based tuning rather than a trained model, a limitation I'm upfront about — and exactly why I want graduate-level exposure to more rigorous, data-driven design methods.</div>
+      </div>
+      <div class="phil-card">
+        <span class="phil-num">03</span>
+        <div class="phil-title">Protect game feel over feature count</div>
+        <div class="phil-body">When two-player local input in the fighting game caused timing conflicts, I didn't add more features to compensate — I cut scope and rebuilt input handling until hits registered on-frame. A smaller game that feels right beats a longer feature list that doesn't.</div>
+      </div>
+      <div class="phil-card">
+        <span class="phil-num">04</span>
+        <div class="phil-title">Narrative structure is a design constraint, not decoration</div>
+        <div class="phil-body">Riddle Raaz's chapter pacing changed after early builds felt front-loaded with dialogue before any player agency. I moved narrative payoff to reward correct answers rather than gate them upfront — a small structural choice that changed how the whole game felt to play.</div>
       </div>
     </div>
   </div>
@@ -629,12 +366,13 @@
       <div class="skill-tag">Local Multiplayer</div>
       <div class="skill-tag">WebGL Deployment</div>
       <div class="skill-tag">Animation State FSM</div>
+      <div class="skill-tag">Systems Design</div>
+      <div class="skill-tag">Playtest-Driven Tuning</div>
       <div class="skill-tag">OOP / Design Patterns</div>
       <div class="skill-tag">Data Structures & Algo</div>
       <div class="skill-tag">Git / Version Control</div>
       <div class="skill-tag">C / Java</div>
       <div class="skill-tag">Python Basics</div>
-      <div class="skill-tag">HTML / CSS</div>
       <div class="skill-tag">SQL / MySQL</div>
     </div>
   </div>
@@ -645,6 +383,7 @@
   <div class="max">
     <div class="sec-label">✧ the gallery ✧</div>
     <h2>Game Projects</h2>
+    <p class="sec-intro">Each project below includes the design problem behind it, not just the feature list — scroll into the dashed box on each card for the process.</p>
     <div class="divider"><div class="line"></div><span class="heart">♡</span><div class="line"></div></div>
 
     <div class="projects-grid">
@@ -666,7 +405,13 @@
             <li>Browser optimisation for smooth WebGL play</li>
             <li>Vehicle interaction & scoring pipeline</li>
           </ul>
-          <div style="margin-top:0.5rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <div class="design-notes">
+            <div class="dn-label">✎ design notes</div>
+            <div class="dn-row"><span class="dn-key">Problem</span><span class="dn-val">Early traffic AI made deliveries feel either trivial or unfair depending on the route — there was no consistent relationship between distance and time pressure.</span></div>
+            <div class="dn-row"><span class="dn-key">Iteration</span><span class="dn-val">Adjusted vehicle spawn density and speed variance across several internal builds until timer pressure scaled predictably with delivery distance.</span></div>
+            <div class="dn-row"><span class="dn-key">Trade-off</span><span class="dn-val">Chose fewer, better-choreographed vehicles over a visually denser scene, to protect WebGL frame budget — performance constraints shaped the design, not just the code.</span></div>
+          </div>
+          <div style="margin-top:0.3rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://drive.google.com/file/d/1TSV-NJu3Pu0dKZZFd0sR-GPkkc3OnzE1/view" target="_blank">watch demo ▶</a>
             <a class="btn btn-chrome" href="https://drive.google.com/drive/folders/1j6HayPopWg_Z0EM-bgHS3bhevDMwa1P-" target="_blank">view assets</a>
           </div>
@@ -700,7 +445,13 @@
             <li>Health management & combat interaction system</li>
             <li>Two-player simultaneous input handling</li>
           </ul>
-          <div style="margin-top:0.5rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <div class="design-notes">
+            <div class="dn-label">✎ design notes</div>
+            <div class="dn-row"><span class="dn-key">Problem</span><span class="dn-val">Simultaneous two-player input under Unity's default update loop caused frame-timing conflicts — hits sometimes registered a beat late for one player.</span></div>
+            <div class="dn-row"><span class="dn-key">Iteration</span><span class="dn-val">Prototyped three input-polling approaches before settling on a per-player FixedUpdate read, keeping hit detection frame-accurate for both players at once.</span></div>
+            <div class="dn-row"><span class="dn-key">Trade-off</span><span class="dn-val">Early playtesters said blocking felt "too forgiving" — tightened the block-window timing rather than adding new mechanics to compensate, protecting feel over feature count.</span></div>
+          </div>
+          <div style="margin-top:0.3rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://drive.google.com/file/d/1bgRleKPnQhaS6M0Qj6k6Fl4EEBuIgU-_/view" target="_blank">watch demo ▶</a>
             <a class="btn btn-chrome" href="https://drive.google.com/drive/folders/1-Naki4zWoRNLZydVOnlEfTYKo4rIr4SI" target="_blank">view assets</a>
           </div>
@@ -735,6 +486,12 @@
               <li>Player engagement via narrative-driven design</li>
               <li>UI implementation and interaction systems</li>
             </ul>
+            <div class="design-notes">
+              <div class="dn-label">✎ design notes</div>
+              <div class="dn-row"><span class="dn-key">Problem</span><span class="dn-val">A chapter-based quiz risks collapsing into a repetitive dialogue-then-question loop with no sense of pacing or payoff.</span></div>
+              <div class="dn-row"><span class="dn-key">Iteration</span><span class="dn-val">Early builds felt front-loaded — dialogue before any player agency. Restructured so narrative beats unlock as rewards for correct answers instead of gating content upfront.</span></div>
+              <div class="dn-row"><span class="dn-key">Trade-off</span><span class="dn-val">Kept branching shallow by deliberate choice — depth in writing and chapter pacing over branching complexity, given solo-dev scope and timeline.</span></div>
+            </div>
             <div style="margin-top:0.75rem;">
               <div style="font-family: var(--font-display); font-size:0.7rem; font-weight:700; color:var(--lilac-d); margin-bottom:0.5rem; letter-spacing:0.04em; text-transform:uppercase;">chapter demos</div>
               <div class="chapter-links">
@@ -781,7 +538,13 @@
             <li>Audio manager with SFX pooling</li>
             <li>Start menu & game-over state management</li>
           </ul>
-          <div style="margin-top:0.5rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <div class="design-notes">
+            <div class="dn-label">✎ design notes</div>
+            <div class="dn-row"><span class="dn-key">Problem</span><span class="dn-val">Static obstacle spacing made the game either too easy to disengage from or unfairly punishing once speed ramped up.</span></div>
+            <div class="dn-row"><span class="dn-key">Iteration</span><span class="dn-val">Built a dynamic-difficulty layer that logs player performance during a run and manually tunes obstacle spacing and enemy speed against that data.</span></div>
+            <div class="dn-row"><span class="dn-key">Trade-off</span><span class="dn-val">This is rule-based tuning, not a trained model — a conscious scope decision, and the exact gap I want to close with graduate coursework in applied ML and player modeling.</span></div>
+          </div>
+          <div style="margin-top:0.3rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://drive.google.com/file/d/1RnBPJfiSa9vSq8XC_yuJs4ljL_va43Ub/view" target="_blank">watch demo ▶</a>
             <a class="btn btn-chrome" href="https://drive.google.com/drive/folders/1tJSwp0lWdPsJ5tED2waL3V5d_ziYOzON" target="_blank">view assets</a>
           </div>
@@ -854,7 +617,7 @@
   <div class="max">
     <div class="sec-label">✧ say hi ✧</div>
     <h2>Let's Build Something</h2>
-    <p class="sub">Open to gameplay programming roles, internships, and international study opportunities. No active backlogs. Willing to relocate ♡</p>
+    <p class="sub">Open to gameplay programming and game design roles, internships, and graduate study in game development, HCI, or computer graphics. No active backlogs. Willing to relocate ♡</p>
     <div class="contact-links">
       <a class="btn btn-primary" href="mailto:chatterjeeswarnali0@gmail.com">chatterjeeswarnali0@gmail.com</a>
       <a class="btn btn-chrome" href="https://github.com/Swarrrrovski" target="_blank">github ↗</a>
@@ -866,7 +629,7 @@
 
 <footer>
   <span><span class="status-dot"></span>available for opportunities</span>
-  <span>swarnali chatterjee · game programmer · 2026 ♡</span>
+  <span>swarnali chatterjee · game programmer &amp; systems designer · 2026 ♡</span>
 </footer>
 
 </body>
